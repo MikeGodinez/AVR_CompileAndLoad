@@ -37,15 +37,14 @@ int main(void) {
 }
 ```
 
-    1. run in cmd:
-`avr-gcc -mmcu=atmega8535 -Wall -Os -o blink.elf blink.c`
+run in cmd: `avr-gcc -mmcu=atmega8535 -Wall -Os -o blink.elf blink.c`
 
-^ from [3]:
-pg103: `-mmcu` option selects microcontroller
-pg110: `-Os` optimizes for size
-pg49: link to gcc manual[7]
-^ from [8]: `-Wall` enables all warnings
-^ from [9]: `-o` indicates name of output ; blink.c is input file
+^ from [3]:<br>
+pg103: `-mmcu` option selects microcontroller<br>
+pg110: `-Os` optimizes for size<br>
+pg49: link to gcc manual[7]<br>
+^ from [8]: `-Wall` enables all warnings<br>
+^ from [9]: `-o` indicates name of output ; blink.c is input file<br>
 
 
 4. Plug USBasp programmer into USB port. Windows automatically installs a driver.
@@ -67,7 +66,7 @@ pg49: link to gcc manual[7]
 
 [1] https://github.com/m3y54m/start-avr</br>
 [2] https://www.microchip.com/en-us/tools-resources/develop/microchip-studio/gcc-compilers</br>
-[3] avr8-gnu-toolchain-win32_x86_64\doc\avr-libc\avr-libc-user-manual.pdf
+[3] avr8-gnu-toolchain-win32_x86_64\doc\avr-libc\avr-libc-user-manual.pdf<br>
 ^ file within zip file downloaded from [2]
 
 [4] https://tinusaur.com/guides/avr-gcc-toolchain/
