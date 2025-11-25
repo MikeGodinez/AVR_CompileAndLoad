@@ -1,0 +1,103 @@
+7/5/2025
+
+programmer from jaycar:
+https://www.jaycar.co.nz/duinotech-isp-programmer-for-arduino-and-avr/p/XC4627
+- XC4627_manualMain_86841.pdf
+ > https://github.com/ZakKemble/AVRDUDESS		avrdude gui
+  > https://github.com/avrdudes/avrdude/		avrdude command line program
+- XC4627_softwareMain_74679.zip
+ - avrdude\gui\README.md				AVRDUDESS readme (old, ~2020)
+  > http://savannah.nongnu.org/projects/avrdude		avrdude documentation (old url, < jan 2024)
+
+https://www.jaycar.co.nz/duinotech-arduino-compatible-avr-isp-10pin-to-6pin-adaptor/p/XC4613
+- XC4613_datasheetMain_73065.pdf
+
+
+link from avrdudess readme above:
+http://savannah.nongnu.org/projects/avrdude			avrdude documentation, old url
+> https://www.nongnu.org/avrdude/user-manual/avrdude.html
+
+> https://download.savannah.gnu.org/releases/avrdude/
+- avrdude-6.3-mingw32.zip
+- avrdude-6.4-mingw32.zip	~2021
+- avrdude-doc-6.4.pdf		- looks like same avrdude user manual as webpage above
+
+
+
+https://www.google.com/search?q=avr+f_cpu+define
+
+> https://onlinedocs.microchip.com/oxy/GUID-317042D4-BCCE-4065-BB05-AC4312DBC2C4-en-US-2/GUID-690C0FAD-292F-492A-8FF5-01839E392766.html	AVR Libc / 2.2.1 F_CPU
+ > https://onlinedocs.microchip.com/oxy/GUID-317042D4-BCCE-4065-BB05-AC4312DBC2C4-en-US-2/GUID-2615C513-CD26-423E-AA4D-8E1199B8C0DC.html	AVR Libc user manual + lib reference
+						^improperly converted(!) from versions below
+  > http://savannah.nongnu.org/projects/avr-libc/	original site?
+   > https://github.com/avrdudes/avr-libc		new site?
+   > https://www.nongnu.org/avr-libc/user-manual/	AVR Libc user manual + lib reference
+
+> https://toastedcornflakes.github.io/articles/avr_getting_started.html		<<<
+
+> https://onlinedocs.microchip.com/oxy/GUID-78362176-487F-41B9-95C7-B478A9A186EB-en-US-2/GUID-19D17420-19A7-43D6-9517-1FAD8F0A3143.html	AVR42787: AVR sw User Guide AVR 8b MCUs / 8.1 F_CPU
+ > https://onlinedocs.microchip.com/oxy/GUID-78362176-487F-41B9-95C7-B478A9A186EB-en-US-2/GUID-19A60FD3-4DC9-49B5-B858-C51FED9A743D.html	AVR42787: ... / 2 AVR GCC and the Toolchain
+						^parallel set of documentation to stuff above?
+
+
+
+atmega8535, manufacturer page:
+
+https://www.microchip.com/en-us/product/ATmega8535
+ datasheet:
+- ATmega8535(L) - Complete Datasheet.pdf
+- ATmega8535(L) - Summary Datasheet.pdf
+  -'L' indicates wider voltage range (2.7-5.5V vs 4.5-5.5V), but lower speed (0-8MHz vs 0-16MHz)
+
+ application notes:
+- AVR035 Efficient C Coding for 8-bit AVR microcontrollers.pdf
+- Atmel-42787-AVR-Software-User-Guide_ApplicationNote_AVR42787.pdf
+ ^ pdf version of AVR42787 stuff above
+ > pg5: https://gcc.gnu.org/onlinedocs/gcc/		gnu compiler collection manual
+ > pg5: http://www.nongnu.org/avr-libc/user-manual/	avr-libc manual
+
+ development environment:
+> https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide
+- MPLABX-v6.25-windows-installer.exe		mplab ide
+> https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers
+ > https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc8
+- xc8-v3.00-full-install-windows-x64-installer.exe		xc8 compiler
+- MPLAB-XC8-C-Compiler-Users-Guide-for-AVR-MCU-50002750.pdf	xc8 compiler user guide
+- MPLAB-XC8-C-Compiler-Legacy-Users-Guide-DS50002053J.pdf	legacy user guide
+
+ legacy development env:
+- as-installer-7.0.2594-full.exe		microchip/atmel studio
+- Atmel-START-User-Guide-DS50002793B.pdf
+- Getting-Started-with-Microchip-Studio-DS50002712B.pdf
+- Microchip-Studio-UserGuide-DS50002718.pdf
+
+ programmers:
+> https://www.microchip.com/en-us/development-tool/ATATMEL-ICE
+- Atmel-ICE_UserGuide.pdf	pg20: SPI target; pg38: SPI downloading interface pinout
+
+ 3rd party tools:	<<<
+> https://www.microchip.com/en-us/tools-resources/develop/microchip-studio/gcc-compilers
+- avr8-gnu-toolchain-3.7.0.1796-win32.any.x86_64.zip
+ - doc\avr-libc\avr-libc-user-manual.pdf	AVR Libc user manual + lib reference
+						pdf version of content on site further above?
+- avr8-gnu-toolchain-3.7.0.1796-readme.pdf
+
+
+
+https://www.google.com/search?q=avr+gcc+guide
+> https://gcc.gnu.org/wiki/avr-gcc
+
+> https://github.com/m3y54m/start-avr			<<<
+ > https://github.com/avrdudes/avrdude/releases
+- avrdude-v8.0-windows-x64.zip
+ > https://github.com/ZakKemble/AVRDUDESS
+- AVRDUDESS-2.18-setup.exe
+- AVRDUDESS-2.18-portable.zip
+
+ > https://tinusaur.com/guides/avr-gcc-toolchain/	<<<
+  > https://zadig.akeo.ie/
+- zadig-2.9.exe
+- zadig-2.4.exe
+
+> https://www.pololu.com/docs/0J61/6.3			???
+ > https://winavr.sourceforge.net/			???

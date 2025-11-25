@@ -1,0 +1,87 @@
+using avr-gcc and AVRDUDESS
+
+Install avr-gcc compiler.[1]
+- Download and extract relevant file (avr8-gnu-toolchain-3.7.0.1796-win32.any.x86_64.zip) from [2].
+- Add bin folder to path variable.
+- OR use a .bat file that adds it to path just for a cmd session[6].
+- OR just use bin folder as current working directory in cmd later.  <<<
+
+
+Install AVRDUDESS (gui for avrdude).[1]
+- Download and run relevant file (AVRDUDESS-2.18-setup.exe) from [7].
+- OR, download and extract the portable zip.  <<<
+
+
+Compile example blink program.[1][8]
+blink.c:
+#define F_CPU 1000000UL
+
+#include <avr/io.h>
+#include <util/delay.h>
+
+int main(void) {
+	DDRB |= (1 << PB0);
+
+	while (1) {
+		PORTB |= (1 << PB0);
+		_delay_ms(2000);
+		PORTB &= ~(1 << PB0);
+		_delay_ms(2000);
+	}
+
+	return 0;
+}
+
+- run in cmd:
+avr-gcc -mmcu=atmega8535 -Wall -Os -o blink.elf blink.c
+
+-mmcu option selects microcontroller;[3] pg103, [4]
+-Os optimizes for size;[3] pg110, [5]
+-[3] pg49 links to gcc user manual[9]
+-Wall enables all warnings[10]
+-o is followed by name of output file; blink.c is input file[11]
+
+
+Plug in USBasp programmer. Windows autoinstalls a driver.
+
+Change driver.
+- Run zadig-2.4.exe [6][12] (from [13] or [15]) (no install, just runs).
+- Select USBasp and libusb-win32. [12]
+
+Connect USBasp to microcontroller.[1], [14] pg251
+
+Load program with AVRDUDESS.[12]
+- Run avrdudess.exe .
+- Select programmer: usbasp , select microcontroller: ATMega8535, select blink.elf file.
+- Click Program! button.
+
+
+
+references
+
+[1] https://github.com/m3y54m/start-avr
+[2] https://www.microchip.com/en-us/tools-resources/develop/microchip-studio/gcc-compilers
+[3] avr8-gnu-toolchain-win32_x86_64\doc\avr-libc\avr-libc-user-manual.pdf
+^ file within zip file downloaded from [2]
+[4] https://www.nongnu.org/avr-libc/user-manual/using_tools.html#using_avr_gcc_mach_opt
+[5] https://www.nongnu.org/avr-libc/user-manual/using_tools.html#using_sel_gcc_opts
+
+[6] https://tinusaur.com/guides/avr-gcc-toolchain/
+
+[7] https://github.com/ZakKemble/AVRDUDESS/releases
+
+[8] https://toastedcornflakes.github.io/articles/avr_getting_started.html
+
+[9] https://gcc.gnu.org/onlinedocs/
+[10] https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wall
+[11] https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Overall-Options.html
+
+[12] https://media.jaycar.com.au/product/resources/XC4627_manualMain_86841.pdf
+[13] https://media.jaycar.com.au/product/resources/XC4627_softwareMain_74679.zip
+
+[14] https://ww1.microchip.com/downloads/en/DeviceDoc/doc2502.pdf	ATMega8535 datasheet
+
+[15] https://zadig.akeo.ie/
+
+
+
